@@ -104,5 +104,15 @@ sudo docker push suspicioushaibt/fib-client
 * Postgres PVC
 * Postgres Deployment -> Postgres Container -> Postgres is a DB, takes in some amount of data and writes it to file system
 * If the Pods that wraps it, we will lose all data inside it
-* Volume, in the world of Kubernetes, is an object that allows a container to store data at the pod level
 * Volume, generally, is a mechanism that allows a container to access a filesystem outside itself 
+* Volume, **in the world of Kubernetes,** is an object that allows a container to store data at the pod level
+  * Kubernetes Volume is a data storage pocket which is tied to a particular Pod
+  * Pros: if a container dies then the new container will still access to that same volume that the previos container had access too
+  * Cons: if the Pod itself ever fails, gets recreated, etc. then the data is gone
+  * Thus, k8s volumes are not appropriate for persistent data storage
+* Persistent Volume
+ * If Pod crashes, new Pod is created and works with the persisten Volume associated with the crashed instance
+* Perisistent Volume Claim (not the same as Volume in k8s)
+  * PVC is not an actual storage, it's a declaration of what should be availble for Pods. Something that one can get when Pod is created. 
+  * K8s checks through instances of storage options, that have need created ahead of time (to be used right away for storage - statically provisioned), and there is also availble dynamically provisioned option
+  * PVC is a declaration of options amoung statically or dynamically available storage options 
