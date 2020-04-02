@@ -85,3 +85,10 @@ minikube ip
 kubectl delete -f <config file>
 ```
 * `kubectl get deployments` <- get current deployments
+* update docker image
+```
+sudo docker build -t suspicioushaibt/fib-client .
+sudo docker push suspicioushaibt/fib-client
+sudo docker login
+sudo docker push suspicioushaibt/fib-client
+```
