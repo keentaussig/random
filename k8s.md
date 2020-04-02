@@ -92,3 +92,4 @@ sudo docker push suspicioushaibt/fib-client
 sudo docker login
 sudo docker push suspicioushaibt/fib-client
 ```
+* reconfigure docker cli to look inside the minikube VM `eval $(minikube docker-env)`
