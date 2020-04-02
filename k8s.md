@@ -104,4 +104,5 @@ sudo docker push suspicioushaibt/fib-client
 * Postgres PVC
 * Postgres Deployment -> Postgres Container -> Postgres is a DB, takes in some amount of data and writes it to file system
 * If the Pods that wraps it, we will lose all data inside it
-* 
+* Volume, in the world of Kubernetes, is an object that allows a container to store data at the pod level
+* Volume, generally, is a mechanism that allows a container to access a filesystem outside itself 
