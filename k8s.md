@@ -119,3 +119,18 @@ sudo docker push suspicioushaibt/fib-client
   * `kubectl describe storageclass`
   * In cloud: Azure File, Azure Disk, AWS Block Store, Google Cloud Persistent Disk
   * `kubectl get pv`
+
+### Secrets
+* `kubectl create secret generic/tls/<OTHER> <SECRET_NAME> --from-literal key=value`
+* `kubectl get secrets`
+
+### Load Balancer Service
+* Provides network to reach a set of Pods
+* Load Balancer Service - reaches out cloud provider and uses AWS or Azure load balancers configuration
+* It is going to automatically configure that lb to govern access to a specific set of Pods
+* It sounds like it is deprecated, use Ingress Service instead
+
+### Ingress
+* Nginx Ingress **ingress-nginx** (community lead project by kubernetes community). GitHub: kubernetes/ingress-nginx
+* There is also **kubernetes-ingress** - this is also an nginx ingress, but it's a 100% separate project lead by nginx company
+* 
