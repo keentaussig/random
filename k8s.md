@@ -135,4 +135,4 @@ sudo docker push suspicioushaibt/fib-client
 * There is also **kubernetes-ingress** - this is also an nginx ingress, but it's a 100% separate project lead by nginx company
 * Blog about Ingress https://www.joyfulbikeshedding.com/blog/2018-03-26-studying-the-kubernetes-ingress-system.html
 * Ingress-nginx guide https://kubernetes.github.io/ingress-nginx/deploy/#prerequisite-generic-deployment-command
-
+* To check if the ingress controller pods have started: `kubectl get pods --all-namespaces -l app.kubernetes.io/name=ingress-nginx --watch`
