@@ -133,3 +133,4 @@ sudo docker push suspicioushaibt/fib-client
 ### Ingress
 * Nginx Ingress **ingress-nginx** (community lead project by kubernetes community). GitHub: kubernetes/ingress-nginx
 * There is also **kubernetes-ingress** - this is also an nginx ingress, but it's a 100% separate project lead by nginx company
+* Doc on ingress https://www.joyfulbikeshedding.com/blog/2018-03-26-studying-the-kubernetes-ingress-system.html
