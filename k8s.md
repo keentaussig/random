@@ -99,3 +99,9 @@ sudo docker push suspicioushaibt/fib-client
 * Create config files for ClusterIPs and all Deployments
 * Test locally on minikube
 * Create a github/travis deployment
+### PVC
+* PVC - Persistent Volume Claim
+* Postgres PVC
+* Postgres Deployment -> Postgres Container -> Postgres is a DB, takes in some amount of data and writes it to file system
+* If the Pods that wraps it, we will lose all data inside it
+* 
