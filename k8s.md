@@ -94,3 +94,4 @@ sudo docker push suspicioushaibt/fib-client
 ```
 * reconfigure docker cli to look inside the minikube VM `eval $(minikube docker-env)`
 * examine logs inside a container `docker exec -it 208b7f9762c4 sh`
+* clean unused container from minikube `docker system prune -a`
