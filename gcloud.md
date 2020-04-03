@@ -5,4 +5,6 @@ Updated property [core/project].
 Updated property [compute/zone].
 @cloudshell:~ (fibonacci-k8s-273103)$ gcloud container clusters get-credentials cluster-fibonacci-k8s
 Fetching cluster endpoint and auth data.
+
+kubectl create secret generic pgpassword --from-literal PGPASSWORD=
 ```
