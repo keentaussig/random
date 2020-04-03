@@ -10,5 +10,6 @@ travis login --com
 # log into github
 
 travis encrypt-file service.json -r keentaussig/fibonacci-k8s --com
-
+# add line printed out by travis cli to .travis.yml
+exit
 ```
