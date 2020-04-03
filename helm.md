@@ -1,3 +1,8 @@
+https://kubernetes.github.io/ingress-nginx/deploy/#using-helm
+
+### What is Helm?
+Used to administer software inside kubernetes cluster.
+
 1. Install Helm v3:
 ```
 curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 > get_helm.sh
