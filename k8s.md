@@ -141,3 +141,54 @@ sudo docker push suspicioushaibt/fib-client
 ```
 minikube dashboard
 ```
+
+### Cert Manager Installation
+https://docs.cert-manager.io/en/latest/getting-started/install/kubernetes.html#steps
+
+```
+#1. Apply the yaml config file
+kubectl apply --validate=false -f https://raw.githubusercontent.com/jetstack/cert-manager/release-0.11/deploy/manifests/00-crds.yaml
+
+# 2. Create the namespace for cert-manager
+kubectl create namespace cert-manager
+
+# 3. Add the Jetstack Helm repository
+helm repo add jetstack https://charts.jetstack.io
+
+# 4. Update your local Helm chart repository cache
+helm repo update
+
+# 5.  Install the cert-manager Helm chart (Helm 3):
+helm install cert-manager --namespace cert-manager --version v0.11.0 jetstack/cert-manager
+```
+
+### issuer.yaml
+https://docs.cert-manager.io/en/latest/tasks/issuers/setup-acme/index.html#creating-a-basic-acme-issuer
+
+1. `apiVersion: cert-manager.io/v1alpha2`
+2. Add the solvers property
+```
+    apiVersion: cert-manager.io/v1alpha2
+    kind: ClusterIssuer
+    metadata:
+      name: letsencrypt-prod
+    spec:
+      acme:
+        server: https://acme-v02.api.letsencrypt.org/directory
+        email: "youremail@email.com"
+        privateKeySecretRef:
+          name: letsencrypt-prod
+        solvers:
+          - http01:
+              ingress:
+                class: nginx
+```
+
+### certificate.yaml file
+
+1. Update the apiVersion with: `apiVersion: cert-manager.io/v1alpha2`
+
+### ingress-service.yaml file
+```
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+```
