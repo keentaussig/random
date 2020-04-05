@@ -152,7 +152,13 @@ kubectl apply --validate=false -f https://raw.githubusercontent.com/jetstack/cer
 # 2. Create the namespace for cert-manager
 kubectl create namespace cert-manager
 
-# 3. Add the Jetstack Helm repository
+# 3.1. Install helm 3
+
+curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 > get_helm.sh
+chmod 700 get_helm.sh
+./get_helm.sh
+
+# 3.2. Add the Jetstack Helm repository
 helm repo add jetstack https://charts.jetstack.io
 
 # 4. Update your local Helm chart repository cache
